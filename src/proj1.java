@@ -16,6 +16,11 @@ public class proj1 {
         System.out.println("[Note: Enter e to exit]\n");
         System.out.print("Length Convertion Type No: ");
         String user_choice = sc.nextLine();
+
+        if (exit_checker(user_choice)) {
+            exit();
+            System.exit(0);
+        }
         while (true) {
             try {
                 int final_user_choice = Integer.parseInt(user_choice);
@@ -45,12 +50,9 @@ public class proj1 {
                         break;
                     default:
                         System.out.println("Invalid convertion type no. Please enter a valid number.");
+                        break;
                 }
             } catch (NumberFormatException e) {
-                if (exit_checker(user_choice)) {
-                    exit();
-                    System.exit(0);
-                }
                 System.out.println("Invalid convertion type no. Please enter a valid number or e to exit.");
             }
         }
