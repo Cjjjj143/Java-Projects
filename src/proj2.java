@@ -35,9 +35,7 @@ public class proj2 {
         System.out.print(options_list);
         System.out.print("Option No: ");
         String user_input = get_user_input();
-        int chosen_option = int_checker(user_input);4
-
-
+        int chosen_option = int_checker(user_input);
     }
 
 
