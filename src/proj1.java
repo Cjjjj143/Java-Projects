@@ -16,41 +16,43 @@ public class proj1 {
         System.out.println("[Note: Enter e to exit]\n");
         System.out.print("Length Convertion Type No: ");
         String user_choice = sc.nextLine();
-        try {
-            int final_user_choice = Integer.parseInt(user_choice);
-            switch (final_user_choice) {
-                case 1:
-                    System.out.print("Meter: ");
-                    String meter_variable = sc.nextLine();
-                    if (exit_checker(meter_variable)) {
-                        exit();
-                        System.exit(0);
-                    }
-                    double final_meter_variable = Double.parseDouble(meter_variable);
-                    double result1 = length_weight1(final_meter_variable);
-                    System.out.println("Kilometer: " + result1 + "km");
-                    break;
+        while (true) {
+            try {
+                int final_user_choice = Integer.parseInt(user_choice);
+                switch (final_user_choice) {
+                    case 1:
+                        System.out.print("Meter: ");
+                        String meter_variable = sc.nextLine();
+                        if (exit_checker(meter_variable)) {
+                            exit();
+                            System.exit(0);
+                        }
+                        double final_meter_variable = Double.parseDouble(meter_variable);
+                        double result1 = length_weight1(final_meter_variable);
+                        System.out.println("Kilometer: " + result1 + "km");
+                        break;
 
-                case 2:
-                    System.out.print("Kilometer: ");
-                    String kilometer_variable = sc.nextLine();
-                    if (exit_checker(kilometer_variable)) {
-                        exit();
-                        System.exit(0);
-                    }
-                    double final_kilometer_variable = Double.parseDouble(kilometer_variable);
-                    double result2 = length_weight2(final_kilometer_variable);
-                    System.out.println("Meter: " + result2 + "m");
-                    break;
-                default:
-                    System.out.println("Invalid convertion type no. Please enter a valid number.");
+                    case 2:
+                        System.out.print("Kilometer: ");
+                        String kilometer_variable = sc.nextLine();
+                        if (exit_checker(kilometer_variable)) {
+                            exit();
+                            System.exit(0);
+                        }
+                        double final_kilometer_variable = Double.parseDouble(kilometer_variable);
+                        double result2 = length_weight2(final_kilometer_variable);
+                        System.out.println("Meter: " + result2 + "m");
+                        break;
+                    default:
+                        System.out.println("Invalid convertion type no. Please enter a valid number.");
+                }
+            } catch (NumberFormatException e) {
+                if (exit_checker(user_choice)) {
+                    exit();
+                    System.exit(0);
+                }
+                System.out.println("Invalid convertion type no. Please enter a valid number or e to exit.");
             }
-        } catch (NumberFormatException e) {
-            if (exit_checker(user_choice)) {
-                exit();
-                System.exit(0);
-            }
-            System.out.println("Invalid convertion type no. Please enter a valid number or e to exit.");
         }
     }
 
