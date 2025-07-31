@@ -50,6 +50,7 @@ public class proj1 {
                 exit();
                 System.exit(0);
             }
+            System.out.println("Invalid convertion type no. Please enter a valid number or e to exit.");
         }
     }
 
@@ -81,11 +82,6 @@ public class proj1 {
             System.out.print("Weight Convertion Type No: ");
             String user_choice = sc.nextLine();
             try {
-                if (exit_checker(user_choice)) {
-                    exit();
-                    System.exit(0);
-                }
-            } catch (NumberFormatException e) {
                 int final_user_choice = Integer.parseInt(user_choice);
                 switch (final_user_choice) {
                     case 1:
@@ -113,6 +109,12 @@ public class proj1 {
                     default:
                         System.out.println("Invalid convertion type no. Please enter a valid number.");
                 }
+            } catch (NumberFormatException e) {
+                if (exit_checker(user_choice)) {
+                    exit();
+                    System.exit(0);
+                }
+                System.out.println("Invalid convertion type no. Please enter a valid number or e to exit.");
             }
         }
     }
@@ -131,16 +133,10 @@ public class proj1 {
         while (true) {
             String user_choice = sc.nextLine();
             try {
-                if (exit_checker(user_choice)) {
-                    exit();
-                    System.exit(0);
-                }
-            } catch (NumberFormatException e) {
                 int final_user_choice = Integer.parseInt(user_choice);
                 switch (final_user_choice) {
                     case 1:
                         System.out.print("Fahrenheit: ");
-
                         String fahrenheit = sc.nextLine();
                         if (exit_checker(user_choice)) {
                             exit();
@@ -164,6 +160,12 @@ public class proj1 {
                     default:
                         System.out.println("Invalid convertion type no. Please enter a valid number.");
                 }
+            } catch (NumberFormatException e) {
+                if (exit_checker(user_choice)) {
+                    exit();
+                    System.exit(0);
+                }
+                System.out.println("Invalid convertion type no. Please enter a valid number or e to exit.");
             }
         }
     }
