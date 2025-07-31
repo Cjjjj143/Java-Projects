@@ -6,7 +6,7 @@ public class proj1 {
     public static void length(){
         String string_format = """
         ===============================
-        ||  Length Convertion Types  ||
+        ||  Length Conversion Types  ||
         ||===========================||
         ||  1. Meter to Kilometer    ||
         ||  2. Kilometer to Meter    ||
@@ -16,7 +16,7 @@ public class proj1 {
         System.out.println("[Note: Enter e to exit]\n");
 
         while (true) {
-            System.out.print("Length Convertion Type No: ");
+            System.out.print("Length Conversion Type No: ");
             String user_choice = sc.nextLine();
             System.out.println("\n");
 
@@ -28,7 +28,7 @@ public class proj1 {
                 int final_user_choice = Integer.parseInt(user_choice);
                 switch (final_user_choice) {
                     case 1:
-                        System.out.println("[Length Convertion Type: Meter to Kilometer]\n");
+                        System.out.println("[Length Conversion Type: Meter to Kilometer]\n");
                         System.out.print("Meter: ");
                         String meter_variable = sc.nextLine();
                         if (exit_checker(meter_variable)) {
@@ -42,7 +42,7 @@ public class proj1 {
                         break;
 
                     case 2:
-                        System.out.println("[Length Convertion Type: Kilometer to Meter]\n");
+                        System.out.println("[Length Conversion Type: Kilometer to Meter]\n");
                         System.out.print("Kilometer: ");
                         String kilometer_variable = sc.nextLine();
                         if (exit_checker(kilometer_variable)) {
@@ -55,10 +55,10 @@ public class proj1 {
                         System.out.println("\n");
                         break;
                     default:
-                        System.out.println("Invalid convertion type no. Please enter a valid number.");
+                        System.out.println("Invalid conversion type no. Please enter a valid number.");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Invalid convertion type no. Please enter a valid number or e to exit.");
+                System.out.println("Invalid conversion type no. Please enter a valid number or e to exit.");
             }
         }
     }
@@ -78,7 +78,7 @@ public class proj1 {
     public static void weight(){
         String string_format = """
         ===============================
-        ||  Weight Convertion Types  ||
+        ||  Weight Conversion Types  ||
         ||===========================||
         ||  1. Grams to Kilograms    ||
         ||  2. Kilograms to Grams    ||
@@ -88,7 +88,7 @@ public class proj1 {
         System.out.println("[Note: Enter e to exit]\n");
 
         while (true) {
-            System.out.print("Weight Convertion Type No: ");
+            System.out.print("Weight Conversion Type No: ");
             String user_choice = sc.nextLine();
 
             if (exit_checker(user_choice)) {
@@ -100,7 +100,7 @@ public class proj1 {
                 int final_user_choice = Integer.parseInt(user_choice);
                 switch (final_user_choice) {
                     case 1:
-                        System.out.println("[Weight Convertion Type: Grams to Kilograms]\n");
+                        System.out.println("[Weight Conversion Type: Grams to Kilograms]\n");
                         System.out.print("Grams: ");
                         String grams_variable = sc.nextLine();
                         if (exit_checker(grams_variable)) {
@@ -113,7 +113,7 @@ public class proj1 {
                         System.out.println("\n");
                         break;
                     case 2:
-                        System.out.println("[Weight Convertion Type: Kilograms to Grams]\n");
+                        System.out.println("[Weight Conversion Type: Kilograms to Grams]\n");
                         System.out.print("Kilograms: ");
                         String kilograms_variable = sc.nextLine();
                         if (exit_checker(kilograms_variable)) {
@@ -126,10 +126,10 @@ public class proj1 {
                         System.out.println("\n");
                         break;
                     default:
-                        System.out.println("Invalid convertion type no. Please enter a valid number.");
+                        System.out.println("Invalid conversion type no. Please enter a valid number.");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Invalid convertion type no. Please enter a valid number or e to exit.");
+                System.out.println("Invalid conversion type no. Please enter a valid number or e to exit.");
             }
         }
     }
@@ -145,7 +145,7 @@ public class proj1 {
         System.out.println("\n"+string_format);
         System.out.println("[Note: Enter e to exit]\n");
         while (true) {
-            System.out.print("Temperature Convertion Type No: ");
+            System.out.print("Temperature Conversion Type No: ");
             String user_choice = sc.nextLine();
             if (exit_checker(user_choice)) {
                 exit();
@@ -155,7 +155,7 @@ public class proj1 {
                 int final_user_choice = Integer.parseInt(user_choice);
                 switch (final_user_choice) {
                     case 1:
-                        System.out.println("[Temperature Convertion Type: Fahrenheit to Celsius]\n");
+                        System.out.println("[Temperature Conversion Type: Fahrenheit to Celsius]\n");
                         System.out.print("Fahrenheit: ");
                         String fahrenheit = sc.nextLine();
                         if (exit_checker(user_choice)) {
@@ -168,7 +168,7 @@ public class proj1 {
                         System.out.println("\n");
                         break;
                     case 2:
-                        System.out.println("[Temperature Convertion Type: Celsius to Fahrenheit]\n");
+                        System.out.println("[Temperature Conversion Type: Celsius to Fahrenheit]\n");
                         System.out.print("Celsius: ");
                         String celsius = sc.nextLine();
                         if (exit_checker(celsius)) {
@@ -181,10 +181,10 @@ public class proj1 {
                         System.out.println("\n");
                         break;
                     default:
-                        System.out.println("Invalid convertion type no. Please enter a valid number.");
+                        System.out.println("Invalid conversion type no. Please enter a valid number.");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Invalid convertion type no. Please enter a number or e to exit.");
+                System.out.println("Invalid conversion type no. Please enter a number or e to exit.");
             }
         }
     }
@@ -212,11 +212,11 @@ public class proj1 {
              ||  4. Exit          ||
              =======================\s
          """;
-        System.out.println(options_format);
-        System.out.print("Enter a number: ");
-        int user_input = sc.nextInt();
-        sc.nextLine();
         while (true) {
+            System.out.println(options_format);
+            System.out.print("Enter a number: ");
+            int user_input = sc.nextInt();
+            sc.nextLine();
             try{
                 switch (user_input){
                     case 1:
