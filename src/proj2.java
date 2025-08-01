@@ -7,6 +7,7 @@ public class proj2 {
 
     private static void exit() {
         System.out.println("Exiting...");
+        System.exit(0);
     }
 
     private static int int_checker(String user_input) {
@@ -21,27 +22,74 @@ public class proj2 {
         }
     }
 
+
     private static String get_user_input(String prompt){
         System.out.print(prompt);
         return sc.nextLine();
     }
 
     private static int number_generator(int range){
-        do {
-            Random rand = new Random();
-            return rand.nextInt(range);
-        } while (true);
+        Random rand = new Random();
+        return rand.nextInt(range)+1;
     }
 
     private static boolean is_correct_guess(int guess, int num_to_guess){
         return guess == num_to_guess;
     }
 
+    private static void checking_session(int round, int tries, int range, int score) {
+        while (true) {
+            int num_to_guess = number_generator(range);
+            System.out.printf("\n[Round %d]\n", round);
+            String formatted_prompt = String.format("Enter your guess [1 -> %d]: ",range);
+            String user_input = get_user_input(formatted_prompt);
+            int final_guess = int_checker(user_input);
+
+
+            if (is_correct_guess(final_guess, num_to_guess)) {
+                System.out.println("Congratulations you got it right!");
+                System.out.printf("Score: %d", score);
+                round++;
+                score++;
+            }
+            else {
+                tries--;
+                System.out.println("Wrong Guess.");
+                System.out.println("Correct Number: "+num_to_guess);
+                System.out.printf("Tries left: %d", tries);
+                System.out.printf("Score: %d\n", score);
+
+                if (tries == 0) {
+                    System.out.println("You are out of tries. Want to try again?");
+
+                    while (true) {
+                        String user_input2 = get_user_input("y/n: ");
+
+                        if (user_input2.equals("y")) {
+                            round = 1;
+                            tries = 5;
+                            score = 0;
+                            break;
+                        } else if (user_input2.equals("n")) {
+                            exit();
+                            return;
+                        }
+                        else {
+                            System.out.println("Invalid input. Please input y(yes), n(no), or e(exit).");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
     private static void start() {
         String options_list = """
                 
                     [Note: Enter e to exit.]
-                
+              
+       
                     =========================
                     ||   SELECT A RANGE    ||
                     =========================
@@ -54,36 +102,24 @@ public class proj2 {
         String user_input1 = get_user_input("Option No: ");
         int chosen_option = int_checker(user_input1);
 
+        int round = 1;
         int tries = 5;
+        int score = 0;
 
         switch (chosen_option) {
             case 1:
-                int num_to_guess1 = number_generator(10);
-                for (int i = 1; i <= 5; i++) {
-                    String guess1 = get_user_input("Enter your guess [1 -> 10]: ");
-                    int final_guess1 = int_checker(guess1);
-
-                    if (is_correct_guess(final_guess1, num_to_guess1)) {
-
-
-                    }
-                }
+                checking_session(round, tries, 10, score);
                 break;
             case 2:
-                int num_to_guess2 = number_generator(15);
-                String guess2 = get_user_input("Enter your guess [1 -> 15]: ");
+                checking_session(round, tries, 15, score);
                 break;
             case 3:
-                String user_input2 = get_user_input("Enter your desired range (Eg. 100): ");
-                int desired_range = int_checker(user_input2);
-                int num_to_guess3 = number_generator(desired_range);
-                String formatted_prompt = String.format("Enter your guess [1 -> %d]: ",desired_range);
-                String guess3 = get_user_input(formatted_prompt);
+                String user_input4 = get_user_input("Enter your desired range (Eg. 100): ");
+                int desired_range = int_checker(user_input4);
+                checking_session(round, tries, desired_range, score);
                 break;
         }
     }
-
-
 
 
     public static void main(String[] args){
