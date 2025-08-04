@@ -73,7 +73,7 @@ public class proj3 {
                         double bmi = calculate_bmi(weight, height);
                         System.out.printf("BMI: %.2f\n", bmi);
                         bmi_status_labeling(bmi);
-                        System.out.println(" ");
+                        System.out.println();
                         break;
                     }
                 }
