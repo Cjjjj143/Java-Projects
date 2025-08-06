@@ -118,19 +118,22 @@ public class RockPaperScissorsGame {
                     player.name = userName;
                     game.print_moves(player, computer);
                     String result = game.check_battle_result(player, computer);
-                    if (result.contains(String.format("%s", userName))) {
+                    System.out.println("Result: " + result + "\n");
+
+                    if (result.contains("Draw")) {
+                        break;
+                    } else if (result.contains(userName)) {
                         userScore++;
                         System.out.format("Score: %d\n", userScore);
-                    }
-                    else {
+                    } else if (result.contains("computer")) {
                         CompScore++;
                         System.out.format("Computer Score: %d\n", CompScore);
                     }
                     round++;
-                    System.out.println("Result: "+result+"\n");
                     break;
                 }
             }
+
         }
     }
 }
