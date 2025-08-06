@@ -32,7 +32,6 @@ public class RockPaperScissorsGame {
         }
     }
 
-
     static class Game {
         String check_battle_result(Player user, Computer comp) {
             String userEmojiMove = moves.get(user.move - 1);
@@ -106,24 +105,19 @@ public class RockPaperScissorsGame {
         int round = 1;
         int userScore = 0;
         int CompScore = 0;
-
         while (true) {
             System.out.println("\n========================================\n[Note: Enter e to exit.]");
             System.out.format("\nRound %d\n\n", round);
             while (true) {
                 String player_move = get_user_input("Move: ");
-
                 if (is_valid(player_move)) {
                     player.move = Integer.parseInt(player_move);
                     computer.move = computer.computerMove();
                     computer.print_compMove();
                     Game game = new Game();
                     player.name = userName;
-
                     game.print_moves(player, computer);
-
                     String result = game.check_battle_result(player, computer);
-
                     if (result.contains(String.format("%s", userName))) {
                         userScore++;
                         System.out.format("Score: %d\n", userScore);
