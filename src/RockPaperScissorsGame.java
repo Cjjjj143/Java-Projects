@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class test {
+public class RockPaperScissorsGame {
     private static final Scanner sc = new Scanner(System.in);
     private static final List<String> moves = Arrays.asList("🪨", "📃", "✂️");
 
@@ -101,8 +101,8 @@ public class test {
         System.out.println(greetings);
         sc.nextLine();
         String userName = get_user_input("Username: ");
-        test.Player player = new Player();
-        test.Computer computer = new Computer();
+        RockPaperScissorsGame.Player player = new Player();
+        RockPaperScissorsGame.Computer computer = new Computer();
         int round = 1;
         int userScore = 0;
         int CompScore = 0;
