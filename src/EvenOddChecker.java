@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class EvenOddCounter {
+public class EvenOddChecker {
     private static final Scanner sc = new Scanner(System.in);
     int num;
     boolean is_Even(){
@@ -27,7 +27,7 @@ public class EvenOddCounter {
                 return false;
             }
         }
-        String get_result(EvenOddCounter counter){
+        String get_result(EvenOddChecker counter){
             if (counter.is_Even()) {
                 return String.format("%d is an even number.", counter.num);
             }
@@ -43,7 +43,7 @@ public class EvenOddCounter {
         System.out.println("\nEven or Odd Counter\n");
         System.out.println("[Note: Only enter an integer(whole number). Enter e to exit.]\n");
         while (true) {
-            EvenOddCounter counter = new EvenOddCounter();
+            EvenOddChecker counter = new EvenOddChecker();
             Program_Helper helper = new Program_Helper();
             String userInput = helper.getUserInput();
             if (helper.is_valid(userInput)) {
